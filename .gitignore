@@ -1,0 +1,13 @@
+# Local credentials & environment files (do NOT commit)
+config/config.php
+.env
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Dependencies (if added later)
+vendor/
+node_modules/
