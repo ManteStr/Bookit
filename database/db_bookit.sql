@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2026 at 07:22 PM
+-- Generation Time: Nov 26, 2026 at 10:57 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,15 @@ CREATE TABLE `bibliotekos` (
   `zemelapio_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `bibliotekos`
+--
+
+INSERT INTO `bibliotekos` (`bibliotekos_id`, `pavadinimas`, `adresas`, `aukstas`, `zemelapio_url`) VALUES
+(1, 'Centrinė biblioteka', 'Saulėtekio al. 14, Vilnius', '2', ''),
+(2, 'Achitektūros fakulteto skaitykla', 'Trakų g. 1, T1, 1.15, Vilnius', '2', ''),
+(3, 'Jūreivystės mokslų skaitykla', 'I. Kanto g. 7, Klaipėda', '1', '');
+
 -- --------------------------------------------------------
 
 --
@@ -45,6 +54,16 @@ CREATE TABLE `iranga` (
   `irangos_id` int(11) NOT NULL,
   `pavadinimas` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `iranga`
+--
+
+INSERT INTO `iranga` (`irangos_id`, `pavadinimas`) VALUES
+(4, 'Int_lenta'),
+(1, 'Kompiuteris'),
+(2, 'Projektorius'),
+(3, 'Ras_lenta');
 
 -- --------------------------------------------------------
 
@@ -63,10 +82,22 @@ CREATE TABLE `kambariai` (
   `talpa` int(11) NOT NULL,
   `stalu_sk` int(11) NOT NULL,
   `kedziu_sk` int(11) NOT NULL,
-  `kompiuteriu_sk` int(11) NOT NULL,
   `busena` varchar(20) NOT NULL,
   `nuotraukos_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kambariai`
+--
+
+INSERT INTO `kambariai` (`kambario_id`, `bibliotekos_id`, `pavadinimas`, `kambario_nr`, `aukstas`, `zemelapio_x`, `zemelapio_y`, `talpa`, `stalu_sk`, `kedziu_sk`, `busena`, `nuotraukos_url`) VALUES
+(1, 1, 'Darbo kambarys 1', '220', 2, 0.00, 0.00, 6, 4, 6, '', ''),
+(2, 1, 'Darbo kambarys 2', '211', 2, 0.00, 0.00, 8, 8, 8, '', ''),
+(3, 1, 'Bendradarbystės erdvė', '201A', 2, 0.00, 0.00, 13, 3, 13, '', ''),
+(4, 1, 'Galerija skaitykla', '216', 2, 0.00, 0.00, 22, 11, 22, '', ''),
+(5, 2, 'ARS Darbo kambarys', 'T-1 1.15', 2, 0.00, 0.00, 10, 2, 10, '', ''),
+(6, 3, 'Individualaus darbo kambarys 1', '1', 1, 0.00, 0.00, 1, 1, 1, '', ''),
+(7, 3, 'Individualaus darbo kambarys 2', '2', 1, 0.00, 0.00, 1, 1, 1, '', '');
 
 -- --------------------------------------------------------
 
@@ -80,6 +111,17 @@ CREATE TABLE `kambario_iranga` (
   `irangos_id` int(11) NOT NULL,
   `kiekis` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `kambario_iranga`
+--
+
+INSERT INTO `kambario_iranga` (`kambario_irangos_id`, `kambario_id`, `irangos_id`, `kiekis`) VALUES
+(1, 2, 3, 1),
+(2, 4, 1, 2),
+(3, 5, 1, 1),
+(4, 6, 1, 1),
+(5, 7, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -124,6 +166,15 @@ CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL,
   `pavadinimas` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`role_id`, `pavadinimas`) VALUES
+(2, 'Admin'),
+(1, 'Svecias'),
+(3, 'Vartotojas');
 
 -- --------------------------------------------------------
 
@@ -212,25 +263,25 @@ ALTER TABLE `vartotojai`
 -- AUTO_INCREMENT for table `bibliotekos`
 --
 ALTER TABLE `bibliotekos`
-  MODIFY `bibliotekos_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `bibliotekos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `iranga`
 --
 ALTER TABLE `iranga`
-  MODIFY `irangos_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `irangos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `kambariai`
 --
 ALTER TABLE `kambariai`
-  MODIFY `kambario_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kambario_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `kambario_iranga`
 --
 ALTER TABLE `kambario_iranga`
-  MODIFY `kambario_irangos_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `kambario_irangos_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `pranesimu_prenumeratos`
@@ -248,7 +299,7 @@ ALTER TABLE `rezervacijos`
 -- AUTO_INCREMENT for table `roles`
 --
 ALTER TABLE `roles`
-  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `role_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `vartotojai`
