@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.logo img {
+  display: block;
+  width: auto;
+  height: 60px; /* logotipo aukštis antraštėje */
+}
+
+.logo-lg img {
+  height: 80px; /* prisijungimo ir registracijos puslapiuose */
+}

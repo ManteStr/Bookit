@@ -1,0 +1,50 @@
+.tabs {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+}
+
+.tabs-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px 16px;
+  display: flex;
+  justify-content: space-evenly; /* vienodi tarpai tarp mygtukų ir kraštų */
+  gap: 16px;
+  overflow-x: auto;
+}
+
+.tab {
+  flex: 0 0 auto;
+  padding: 15px 50px;
+  border-radius: 999px;
+  border: 2px solid var(--green);
+  color: var(--green);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.tab:hover {
+  background: rgba(59, 122, 87, 0.1);
+}
+
+.tab-active {
+  background: var(--green);
+  color: var(--white);
+}
+.tab-active:hover {
+  background: var(--green);
+}
+
+/* Svečias paspaudė skyrių, kuris tik registruotiems – oranžinė spalva */
+.tab-restricted {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+.tab-restricted:hover {
+  background: var(--orange);
+}

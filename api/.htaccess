@@ -1,0 +1,11 @@
+# Neleidžia naršyti aplanko turinio.
+Options -Indexes
+
+# Leidžia kreiptis be "index.php", pvz. /bookit/api/auth/login
+# (kūrimo metu to nereikia, nes Vite proxy naudoja ?r=...).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^ index.php [L]
+</IfModule>

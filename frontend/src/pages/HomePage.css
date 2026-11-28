@@ -1,0 +1,51 @@
+.home {
+  width: 100%;
+  max-width: 980px;
+  margin: auto; /* centruoja ir horizontaliai, ir vertikaliai */
+  padding-bottom: 10vh;
+  text-align: center;
+}
+
+.home-title {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+}
+
+.home-lead {
+  margin: 14px 0 36px;
+  color: var(--muted);
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+}
+
+.home-card {
+  padding: clamp(32px, 6vw, 56px) clamp(20px, 5vw, 48px);
+  border-radius: 24px;
+  background: var(--green);
+  color: var(--white);
+  box-shadow: var(--shadow);
+}
+
+.home-card h2 {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  margin-bottom: 16px;
+}
+
+.home-card p {
+  margin: 0 auto 32px;
+  max-width: 640px;
+  font-size: 1.15rem;
+  opacity: 0.95;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+}
+
+.home-actions .btn {
+  min-width: 210px;
+  min-height: 54px;
+  padding: 12px 38px;
+  font-size: 1rem;
+}

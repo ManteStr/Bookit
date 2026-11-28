@@ -1,0 +1,35 @@
+.room-layout {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 340px;
+  height: 100%;
+  padding: 16px;
+  border-top: 10px solid var(--green);
+  border-left: 10px solid var(--green);
+  background: var(--brown);
+  color: rgba(255, 255, 255, 0.75);
+  text-align: center;
+}
+
+.room-layout img {
+  display: block;
+  width: 100%;
+  max-height: 460px;
+  object-fit: contain;
+}
+
+.room-layout p {
+  margin: 0;
+  max-width: 220px;
+  font-size: 0.95rem;
+}
+
+.room-layout-nr {
+  position: absolute;
+  right: 10px;
+  bottom: 6px;
+  color: var(--white);
+  font-size: 0.8rem;
+}

@@ -1,0 +1,45 @@
+.dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: rgba(30, 34, 41, 0.45);
+}
+
+.dialog {
+  position: relative;
+  width: min(460px, 100%);
+  padding: 36px 28px 28px;
+  border-radius: 16px;
+  background: var(--orange);
+  color: var(--white);
+  text-align: center;
+  box-shadow: var(--shadow);
+}
+
+.dialog h2 {
+  font-size: 1.3rem;
+  margin-bottom: 22px;
+}
+
+.dialog-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: 0;
+  background: transparent;
+  color: var(--white);
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
